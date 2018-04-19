@@ -27,10 +27,9 @@ commander
     console.log(
       chalk.bgYellow('=========*** Task Management System ***==========')
     );
-    inquirer
-      .prompt(getIdQuestions)
-      .then(answers => actions.getTask(answers.id));
+    inquirer.prompt(getIdQuestions).then(answers => console.log(answers)); //actions.getTask(answers.id));
   });
+
 commander
   .command('updateTask')
   .alias('u')
@@ -43,6 +42,7 @@ commander
       .prompt(updateTaskQuestions)
       .then(answers => actions.updateTask(answers));
   });
+
 commander
   .command('deleteTask')
   .alias('d')
@@ -51,10 +51,9 @@ commander
     console.log(
       chalk.bgYellow('=========*** Task Management System ***==========')
     );
-    inquirer
-      .prompt(getIdQuestions)
-      .then(answers => actions.deleteTask(answers.id));
+    inquirer.prompt(getIdQuestions).then(answers => console.log(answers)); //actions.deleteTask(answers.id));
   });
+
 commander
   .command('getTaskList')
   .alias('l')

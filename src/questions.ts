@@ -16,14 +16,15 @@ export const questions: Array<Object> = [
   }
 ];
 
-export let getIdQuestions: Array<Object> = [
+export const getIdQuestions: Array<Object> = [
   {
     type: 'input',
     name: 'id',
     message: 'タスクの番号を入力して下さい'
   }
 ];
-export let updateTaskQuestions: Array<Object> = [
+
+export const updateTaskQuestions: Array<Object> = [
   {
     type: 'input',
     name: 'id',

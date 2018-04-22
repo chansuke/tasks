@@ -14,7 +14,7 @@ commander
   .description('Add a task')
   .action(() => {
     console.log(
-      chalk.bgBlueBright('=========*** Task Management System ***==========')
+      chalk.yellowBright('=========*** Task Management System ***==========')
     );
     inquirer.prompt(questions).then(answers => actions.addTask(answers));
   });
@@ -25,7 +25,7 @@ commander
   .description('Get Task')
   .action(() => {
     console.log(
-      chalk.bgYellow('=========*** Task Management System ***==========')
+      chalk.yellowBright('=========*** Task Management System ***==========')
     );
     inquirer.prompt(getIdQuestions).then(answers => console.log(answers)); //actions.getTask(answers.id));
   });
@@ -36,7 +36,7 @@ commander
   .description('Update Task')
   .action(() => {
     console.log(
-      chalk.bgYellow('=========*** Task Management System ***==========')
+      chalk.yellowBright('=========*** Task Management System ***==========')
     );
     inquirer
       .prompt(updateTaskQuestions)
@@ -49,7 +49,7 @@ commander
   .description('Delete a Task')
   .action(() => {
     console.log(
-      chalk.bgYellow('=========*** Task Management System ***==========')
+      chalk.yellowBright('=========*** Task Management System ***==========')
     );
     inquirer.prompt(getIdQuestions).then(answers => console.log(answers)); //actions.deleteTask(answers.id));
   });
@@ -60,7 +60,7 @@ commander
   .description('Get Task List')
   .action(() => {
     console.log(
-      chalk.bgYellow('=========*** Task Management System ***==========')
+      chalk.yellowBright('=========*** Task Management System ***==========')
     );
     actions.getTaskList();
   });

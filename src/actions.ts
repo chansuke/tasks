@@ -12,7 +12,7 @@ export const addTask = (answers: any) => {
       const requestUrl = url + '/addTask';
       const response = await axios.post(requestUrl, answers);
       spinner.stop();
-      console.log(chalk.bgMagenta('タスクが追加されました'));
+      console.log(chalk.blueBright('タスクが追加されました'));
     } catch (error) {
       console.log(error);
     }
@@ -29,7 +29,7 @@ export const getTask = (id: number) => {
       spinner.stop();
       const object = response.data;
       object.map(obj => {
-        console.log(chalk.bgCyanBright('========================='));
+        console.log(chalk.cyanBright('========================='));
         console.log(
           chalk.bgGreenBright(
             `Task: ${obj.task} \nDue: ${obj.duedate} \nタグ: ${obj.tag}`
@@ -49,7 +49,7 @@ export const updateTask = (task: any) => {
       const requestUrl = url + '/updateTask/' + `${task.id}`;
       const response = await axios.put(requestUrl, task);
       spinner.stop();
-      console.log(chalk.bgYellowBright('タスクが更新されました'));
+      console.log(chalk.yellowBright('タスクが更新されました'));
     } catch (error) {
       console.log(error);
     }
@@ -63,7 +63,7 @@ export const deleteTask = (id: number) => {
       const requestUrl = url + '/deleteTask/' + `${id}`;
       const response = await axios.delete(requestUrl);
       spinner.stop();
-      console.log(chalk.bgMagentaBright('タスクがクリアされました!!'));
+      console.log(chalk.magentaBright('タスクがクリアされました!!'));
     } catch (error) {
       console.log(error);
     }
@@ -79,7 +79,7 @@ export const getTaskList = () => {
       spinner.stop();
       const object = response.data.res;
       object.map(obj => {
-        console.log(chalk.bgYellowBright('~~~~~~~~~~~~~~~~~~~~~~~~~~~'));
+        console.log(chalk.blueBright('~~~~~~~~~~~~~~~~~~~~~~~~~~~'));
         console.log(
           chalk.bgRedBright(
             `Task: ${obj.task} \nDue: ${obj.duedate} \nタグ: ${obj.tag}`

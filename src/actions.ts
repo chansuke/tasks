@@ -77,15 +77,18 @@ export const getTaskList = () => {
       const requestUrl = url + '/getTaskList';
       const response = await axios.get(requestUrl);
       spinner.stop();
-      const object = response.data.res;
-      object.map(obj => {
+      const object = await response.data.res;
+      console.log(object);
+      for (var key in object) {
         console.log(chalk.blueBright('~~~~~~~~~~~~~~~~~~~~~~~~~~~'));
         console.log(
           chalk.bgRedBright(
-            `Task: ${obj.task} \nDue: ${obj.duedate} \nタグ: ${obj.tag}`
+            `Task: ${object.task} \nDue: ${object.duedate} \nタグ: ${
+              object.tag
+            }`
           )
         );
-      });
+      }
     } catch (error) {
       console.log(error);
     }

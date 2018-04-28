@@ -28,14 +28,16 @@ export const getTask = (id: number) => {
       spinner.clear();
       spinner.stop();
       const object = response.data;
-      object.map(obj => {
+      for (var key in object) {
         console.log(chalk.cyanBright('========================='));
         console.log(
           chalk.bgGreenBright(
-            `Task: ${obj.task} \nDue: ${obj.duedate} \nタグ: ${obj.tag}`
+            `Id: ${id} \nTask: ${object.task} \nDue: ${
+              object.duedate
+            } \nタグ: ${object.tag}`
           )
         );
-      });
+      }
     } catch (error) {
       console.log(error);
     }
@@ -78,14 +80,13 @@ export const getTaskList = () => {
       const response = await axios.get(requestUrl);
       spinner.stop();
       const object = await response.data.res;
-      console.log(object);
       for (var key in object) {
         console.log(chalk.blueBright('~~~~~~~~~~~~~~~~~~~~~~~~~~~'));
         console.log(
-          chalk.bgRedBright(
-            `Task: ${object.task} \nDue: ${object.duedate} \nタグ: ${
-              object.tag
-            }`
+          chalk.whiteBright(
+            `Id: ${key} \nTask: ${object[key].task} \nDue: ${
+              object[key].duedate
+            } \nタグ: ${object[key].tag}`
           )
         );
       }
